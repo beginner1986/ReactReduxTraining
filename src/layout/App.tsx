@@ -1,9 +1,10 @@
+import { Outlet } from 'react-router-dom';
 import './styles.css';
 
 function App() {
   return (
     <div>
-      App
+      <Outlet />
     </div>
   );
 }
