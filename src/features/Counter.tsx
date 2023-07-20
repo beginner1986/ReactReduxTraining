@@ -9,8 +9,10 @@ export default function Counter() {
         <div id='counter'>
             <h1>{value}</h1>
             <div>
-                <button onClick={() => dispatch(increment())} className='btn'>+</button>
-                <button onClick={() => dispatch(decrement())} className='btn'>-</button>
+                <button onClick={() => dispatch(decrement(2))} className='btn'>-2</button>
+                <button onClick={() => dispatch(decrement(1))} className='btn'>-</button>
+                <button onClick={() => dispatch(increment(1))} className='btn'>+</button>
+                <button onClick={() => dispatch(increment(2))} className='btn'>+2</button>
             </div>
         </div>
     )
