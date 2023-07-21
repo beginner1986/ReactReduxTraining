@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from "../app/store/configureStore";
+import { useAppDispatch, useAppSelector } from "../../app/store/configureStore";
 import { decrement, increment } from "./counterSlice";
 
 export default function Counter() {
