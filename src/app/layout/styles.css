@@ -34,10 +34,17 @@ form input {
 #header a {
   text-decoration: none;
   text-transform: uppercase;
+  font-weight: 400;
+}
+
+#header a:hover {
+  color: brown;
+  font-weight: 700;
 }
 
 #header a.active {
   color: red;
+  font-weight: 700;
 }
 
 #counter {
