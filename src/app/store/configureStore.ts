@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { counterSlice } from "../../features/counter/counterSlice";
+import { colorsSlice } from "../../features/colors/colorsSlice";
 
 export const store = configureStore({
     reducer: {
-        counter: counterSlice.reducer
+        counter: counterSlice.reducer,
+        colors: colorsSlice.reducer
     }
 })
 
