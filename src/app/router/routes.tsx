@@ -1,13 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
 import Counter from "../../features/counter/Counter";
 import App from "../layout/App";
+import Colors from "../../features/colors/Colors";
 
 export const router = createBrowserRouter([
     {
         path: '/',
         element: <App />,
         children: [
-            { path: '', element: <Counter /> }
+            { path: '', element: <Counter /> },
+            { path: 'colors', element: <Colors /> }
         ]
     }
 ])
