@@ -6,7 +6,7 @@ export default function Colors() {
     const {red, green, blue} = useAppSelector(state => state.colors);
 
     return (
-        <div>
+        <main>
             <form>
                 <label>
                     Red:
@@ -22,6 +22,6 @@ export default function Colors() {
                 </label>
             </form>
             <div id='color' style={{background: `rgb(${red}, ${green}, ${blue})`}}></div>
-        </div>
+        </main>
     )
 }

@@ -6,7 +6,7 @@ export default function Counter() {
     const {value} = useAppSelector(state => state.counter);
 
     return (
-        <div id='counter'>
+        <main id='counter'>
             <h1>{value}</h1>
             <div>
                 <button onClick={() => dispatch(decrement(2))} className='btn'>-2</button>
@@ -14,6 +14,6 @@ export default function Counter() {
                 <button onClick={() => dispatch(increment(1))} className='btn'>+</button>
                 <button onClick={() => dispatch(increment(2))} className='btn'>+2</button>
             </div>
-        </div>
+        </main>
     )
 }
