@@ -2,11 +2,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { counterSlice } from "../../features/counter/counterSlice";
 import { colorsSlice } from "../../features/colors/colorsSlice";
+import { asyncCounterSlice } from "../../features/AsyncCounter/aysncCounterSlice";
 
 export const store = configureStore({
     reducer: {
         counter: counterSlice.reducer,
-        colors: colorsSlice.reducer
+        colors: colorsSlice.reducer,
+        acyncCounter: asyncCounterSlice.reducer
     }
 })
 
