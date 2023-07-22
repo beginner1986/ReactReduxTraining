@@ -9,12 +9,15 @@ export const colorsSlice = createSlice({
     },
     reducers: {
         setRed: (state, action) => {
+            if(action.payload > 255) return;
             state.red = action.payload;
         },
         setGreen: (state, action) => {
+            if(action.payload > 255) return;
             state.green = action.payload;
         },
         setBlue: (state, action) => {
+            if(action.payload > 255) return;
             state.blue = action.payload;
         }
     }
