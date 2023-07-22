@@ -1,5 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const validateInput = (input: string) : number => {
+    if(input.length === 0)
+        return 0;
+    if(!Number.parseInt(input) || Number.parseInt(input) < 0 || Number.parseInt(input) > 255) 
+        return -1;
+    
+        return Number.parseInt(input);
+}
+
 export const colorsSlice = createSlice({
     name: 'colors',
     initialState: {
@@ -9,16 +18,19 @@ export const colorsSlice = createSlice({
     },
     reducers: {
         setRed: (state, action) => {
-            if(action.payload > 255) return;
-            state.red = action.payload;
+            var input = validateInput(action.payload);
+            if(input === -1) return;
+            state.red = input;
         },
         setGreen: (state, action) => {
-            if(action.payload > 255) return;
-            state.green = action.payload;
+            var input = validateInput(action.payload);
+            if(input === -1) return;
+            state.green = input;
         },
         setBlue: (state, action) => {
-            if(action.payload > 255) return;
-            state.blue = action.payload;
+            var input = validateInput(action.payload);
+            if(input === -1) return;
+            state.blue = input;
         }
     }
 })
