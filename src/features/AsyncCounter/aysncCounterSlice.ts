@@ -17,18 +17,15 @@ export const asyncCounterSlice = createSlice({
         counterAsyncUpdate: (state) => {
             state.loading = true;
         },
-        incrementAsyncSuccess: (state) => {
-            state.value += 1;
+        incrementAsync: (state, action) => {
+            state.value += action.payload;
             state.loading = false;
         },
-        decrementAsyncSuccess: (state) => {
-            state.value -= 1;
-            state.loading = false;
-        },
-        counterAsyncUpdateFailure: (state) => {
+        decrementAsync: (state, action) => {
+            state.value -= action.payload;
             state.loading = false;
         }
     }
 });
 
-export const { counterAsyncUpdate, incrementAsyncSuccess, decrementAsyncSuccess, counterAsyncUpdateFailure } = asyncCounterSlice.actions;
+export const { counterAsyncUpdate, incrementAsync, decrementAsync } = asyncCounterSlice.actions;
