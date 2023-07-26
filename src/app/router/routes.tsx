@@ -3,6 +3,7 @@ import Counter from "../../features/counter/Counter";
 import App from "../layout/App";
 import Colors from "../../features/colors/Colors";
 import AsyncCounter from "../../features/AsyncCounter/AsyncCounter";
+import ToDo from "../../features/toDo/ToDo";
 
 export const router = createBrowserRouter([
     {
@@ -11,7 +12,8 @@ export const router = createBrowserRouter([
         children: [
             { path: '', element: <Counter /> },
             { path: 'colors', element: <Colors /> },
-            { path: 'asyncCounter', element: <AsyncCounter /> }
+            { path: 'asyncCounter', element: <AsyncCounter /> },
+            { path: 'toDo', element: <ToDo /> }
         ]
     }
 ])
