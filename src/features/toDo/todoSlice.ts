@@ -25,8 +25,12 @@ export const todoSlice = createSlice({
             var todo = state.todos.at(index);
             if(!todo) return
             todo.isDone = !todo.isDone;
+        },
+        addToDoItem: (state, action) => {
+            const toDoItem: ToDoItem = { title: action.payload, isDone: false };
+            state.todos = [...state.todos, toDoItem];
         }
     }
 })
 
-export const { toggleIsDone } = todoSlice.actions;
+export const { toggleIsDone, addToDoItem } = todoSlice.actions;
