@@ -8,6 +8,16 @@ export default function ToDo() {
     return (
         <main style={{margin: '0 20%', display: 'flex', flexDirection: 'column', justifyContent: 'left'}}>
             <h1 style={{margin: '15px', fontSize: 'xx-large', textAlign: 'center'}}>To Do List</h1>
+
+            <form style={{display: 'flex', flexDirection: 'row'}}>
+                <label style={{width: '70%'}}>New task: 
+                    <input type='text' name='new-task'style={{width: '70%'}}/>
+                </label>
+                <input type='submit' value='Add' style={{width: '20%'}} />
+            </form>
+            
+            <hr style={{margin: '10px'}}/>
+            
             <ul>
                 { todos.map(todo => {
                     return (
