@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/store/configureStore"
-import { addToDoItem, toggleIsDone } from "./todoSlice";
+import { addToDoItem, removeToDoItem, toggleIsDone } from "./todoSlice";
 
 export default function ToDo() {
     const dispatch = useAppDispatch();
@@ -27,6 +27,7 @@ export default function ToDo() {
                         type='text' 
                         name='new-task'
                         style={{width: '70%'}}
+                        value={newToDo}
                         onChange={handleNewToDoChange}
                     />
                 </label>
@@ -43,15 +44,21 @@ export default function ToDo() {
             <ul>
                 { todos.map(todo => {
                     return (
-                        <li 
-                            key={todo.title} 
-                            onClick={() => dispatch(toggleIsDone(todo.title))}
-                        >
-                            {todo.isDone ?
-                                <div style={{color: 'green', width: '2rem'}}>&#10004;</div> :
-                                <div style={{color: 'red', width: '2rem'}}>&#10060;</div>} 
-                            {todo.title}
-                        </li>
+                        <>
+                            <li key={todo.title}>
+                                {todo.isDone ?
+                                    <div style={{color: 'green', width: '2rem'}}>&#10004;</div> :
+                                    <div style={{color: 'red', width: '2rem'}}></div>} 
+                                <div onClick={() => dispatch(toggleIsDone(todo.title))}>{todo.title}</div>
+
+                                <div 
+                                    onClick={() => dispatch(removeToDoItem(todo.title))} 
+                                    style={{color: 'red', width: '2rem', marginLeft: '1rem'}}
+                                >
+                                    &#128465;
+                                </div> 
+                            </li>
+                        </>
                     );
                 }) }
             </ul>

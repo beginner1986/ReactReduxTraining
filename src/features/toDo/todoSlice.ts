@@ -29,8 +29,11 @@ export const todoSlice = createSlice({
         addToDoItem: (state, action) => {
             const toDoItem: ToDoItem = { title: action.payload, isDone: false };
             state.todos = [...state.todos, toDoItem];
+        },
+        removeToDoItem: (state, action) => {
+            state.todos = state.todos.filter(todo => todo.title != action.payload);
         }
     }
 })
 
-export const { toggleIsDone, addToDoItem } = todoSlice.actions;
+export const { toggleIsDone, addToDoItem, removeToDoItem } = todoSlice.actions;
