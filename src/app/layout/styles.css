@@ -17,6 +17,17 @@ form input {
   margin: 10px;
 }
 
+li {
+  display: flex;
+  padding: 0 1rem;
+  border: solid gray 1px
+}
+
+li:hover {
+  font-weight: bold;
+  border-color: black
+}
+
 .btn {
   width: 100px;
   height: 100px;

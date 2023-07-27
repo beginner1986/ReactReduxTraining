@@ -6,19 +6,18 @@ export default function ToDo() {
     const { todos } = useAppSelector(state => state.todo)
 
     return (
-        <main style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-            <h1 style={{margin: '15px', fontSize: 'xx-large'}}>To Do List</h1>
+        <main style={{margin: '0 20%', display: 'flex', flexDirection: 'column', justifyContent: 'left'}}>
+            <h1 style={{margin: '15px', fontSize: 'xx-large', textAlign: 'center'}}>To Do List</h1>
             <ul>
                 { todos.map(todo => {
                     return (
                         <li 
                             key={todo.title} 
-                            style={{display: 'flex'}}
                             onClick={() => dispatch(toggleIsDone(todo.title))}
                         >
                             {todo.isDone ?
-                                <div style={{color: 'green'}}>&#10004;</div> :
-                                <div style={{color: 'red'}}>&#10060;</div>} 
+                                <div style={{color: 'green', width: '2rem'}}>&#10004;</div> :
+                                <div style={{color: 'red', width: '2rem'}}>&#10060;</div>} 
                             {todo.title}
                         </li>
                     );
