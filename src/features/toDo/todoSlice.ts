@@ -20,5 +20,13 @@ export const todoSlice = createSlice({
     name: 'todoList',
     initialState,
     reducers: {
+        toggleIsDone: (state, action) => {
+            var index = state.todos.findIndex(todo => todo.title === action.payload);
+            var todo = state.todos.at(index);
+            if(!todo) return
+            todo.isDone = !todo.isDone;
+        }
     }
 })
+
+export const { toggleIsDone } = todoSlice.actions;

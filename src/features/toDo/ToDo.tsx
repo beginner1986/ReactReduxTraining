@@ -1,4 +1,5 @@
 import { useAppDispatch, useAppSelector } from "../../app/store/configureStore"
+import { toggleIsDone } from "./todoSlice";
 
 export default function ToDo() {
     const dispatch = useAppDispatch();
@@ -10,7 +11,11 @@ export default function ToDo() {
             <ul>
                 { todos.map(todo => {
                     return (
-                        <li key={todo.title} style={{display: 'flex'}}>
+                        <li 
+                            key={todo.title} 
+                            style={{display: 'flex'}}
+                            onClick={() => dispatch(toggleIsDone(todo.title))}
+                        >
                             {todo.isDone ?
                                 <div style={{color: 'green'}}>&#10004;</div> :
                                 <div style={{color: 'red'}}>&#10060;</div>} 
