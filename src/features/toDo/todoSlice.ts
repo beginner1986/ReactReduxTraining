@@ -6,11 +6,11 @@ interface ToDoItem {
 }
 
 interface ToDoList {
-    items: ToDoItem[];
+    todos: ToDoItem[];
 }
 
 const initialState: ToDoList = {
-    items: [
+    todos: [
         { title: 'Task one', isDone: true },
         { title: 'Task two', isDone: false }
     ]
@@ -20,6 +20,5 @@ export const todoSlice = createSlice({
     name: 'todoList',
     initialState,
     reducers: {
-        
     }
 })
